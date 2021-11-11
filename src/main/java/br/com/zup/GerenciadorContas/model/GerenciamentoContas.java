@@ -19,12 +19,14 @@ public class GerenciamentoContas {
     @Column(nullable = false)
     private double valor;
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private Tipo tipo;
     @Column(nullable = false)
     private LocalDate dataDeVencimento;
     @Column(nullable = true)
     private LocalDateTime dataDePagamento;
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     public GerenciamentoContas() {
