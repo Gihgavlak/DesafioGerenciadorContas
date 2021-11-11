@@ -3,6 +3,9 @@ package br.com.zup.GerenciadorContas.dto;
 import br.com.zup.GerenciadorContas.enun.Status;
 import br.com.zup.GerenciadorContas.enun.Tipo;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public class SaidaContaDTO {
     private int id;
     private String nome;

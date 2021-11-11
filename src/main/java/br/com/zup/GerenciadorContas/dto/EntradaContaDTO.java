@@ -2,6 +2,8 @@ package br.com.zup.GerenciadorContas.dto;
 
 import br.com.zup.GerenciadorContas.enun.Tipo;
 
+import java.time.LocalDate;
+
 public class EntradaContaDTO {
     private String nome;
     private double valor;
