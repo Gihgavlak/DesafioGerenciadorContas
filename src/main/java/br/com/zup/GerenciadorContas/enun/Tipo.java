@@ -1,5 +1,5 @@
 package br.com.zup.GerenciadorContas.enun;
 
-public enum TipoEnum {
+public enum Tipo {
     LUZ, AGUA, COMIDA, LASER, OUTROS
 }
