@@ -1,5 +1,7 @@
 package br.com.zup.GerenciadorContas;
 
+import br.com.zup.GerenciadorContas.enun.Tipo;
+
 public class GerenciadorDTO {
     private String nome;
     private double valor;
