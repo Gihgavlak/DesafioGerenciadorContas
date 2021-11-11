@@ -1,14 +1,14 @@
-package br.com.zup.GerenciadorContas;
+package br.com.zup.GerenciadorContas.dto;
 
 import br.com.zup.GerenciadorContas.enun.Tipo;
 
-public class GerenciadorDTO {
+public class EntradaContaDTO {
     private String nome;
     private double valor;
     private Tipo tipo;
     private LocalDate dataDeVencimento;
 
-    public GerenciadorDTO() {
+    public EntradaContaDTO() {
 
     }
 
