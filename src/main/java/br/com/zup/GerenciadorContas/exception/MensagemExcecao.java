@@ -4,7 +4,7 @@ public class MensagemExcecao {
 
     private String mensagem;
 
-    public MensagemExcecao(String defaultMessage) {
+    public MensagemExcecao(String memdaggem) {
 
     }
 
