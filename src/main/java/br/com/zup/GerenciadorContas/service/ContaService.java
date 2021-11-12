@@ -1,6 +1,7 @@
 package br.com.zup.GerenciadorContas.service;
 
 import br.com.zup.GerenciadorContas.enun.Status;
+import br.com.zup.GerenciadorContas.enun.Tipo;
 import br.com.zup.GerenciadorContas.exception.IdNaoEnctrdoException;
 import br.com.zup.GerenciadorContas.model.GerenciamentoContas;
 import br.com.zup.GerenciadorContas.repository.GerenciamentoContaRepository;
@@ -57,7 +58,16 @@ public class ContaService {
             throw new IdNaoEnctrdoException("Cadastro não encontrado!");
         }
 
+    }
 
+    public List<GerenciamentoContas> aplicarFiltros(Status status, Tipo tipo) {
+        if (status != null) {
+            return gerenciamentoContaRepository.findAllByStatus(status);
+        } else if (tipo != null) {
+            return gerenciamentoContaRepository.findAllByTipo(tipo);
+        }
+        List<GerenciamentoContas> gerenciamentoContas = (List<GerenciamentoContas>) gerenciamentoContaRepository.findAll();
+        return gerenciamentoContas;
     }
 
 }
