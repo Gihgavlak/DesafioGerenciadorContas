@@ -4,6 +4,8 @@ import br.com.zup.GerenciadorContas.dto.AtualizarStatusContaDTO;
 import br.com.zup.GerenciadorContas.dto.EntradaContaDTO;
 import br.com.zup.GerenciadorContas.dto.ExibirEntradaContaDto;
 import br.com.zup.GerenciadorContas.dto.SaidaContaDTO;
+import br.com.zup.GerenciadorContas.enun.Status;
+import br.com.zup.GerenciadorContas.exception.StatusInvalidoException;
 import br.com.zup.GerenciadorContas.model.GerenciamentoContas;
 import br.com.zup.GerenciadorContas.service.ContaService;
 import org.modelmapper.ModelMapper;
@@ -42,9 +44,12 @@ public class ContaController {
 
     }
 
-    @PutMapping("{id}")
-    public SaidaContaDTO atualizarConta (int id, @RequestBody AtualizarStatusContaDTO atualizarStatusContaDTO){
-        return modelMapper.map(contaService.atualizarConta(id), SaidaContaDTO.class);
+    @PutMapping("/id}")
+    public SaidaContaDTO atualizarConta (@PathVariable int id, @RequestBody AtualizarStatusContaDTO atualizarStatusContaDTO) {
+        if (atualizarStatusContaDTO.getStatus() == Status.PAGO) {
+            return modelMapper.map(contaService.atualizarConta(id), SaidaContaDTO.class);
+        }
+        throw new StatusInvalidoException("Inválido");
     }
 
 }
