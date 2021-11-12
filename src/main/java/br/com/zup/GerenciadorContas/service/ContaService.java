@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,5 +39,14 @@ public class ContaService {
 
         }
         return gerenciamentoContas.get();
+    }
+
+    public GerenciamentoContas atualizarConta (int id) {
+        GerenciamentoContas gerenciamentoContas = indentificador(id);
+        gerenciamentoContas.setDataDePagamento(LocalDateTime.now());
+        gerenciamentoContas.setStatus(Status.PAGO);
+        gerenciamentoContaRepository.save(gerenciamentoContas);
+        return gerenciamentoContas;
+
     }
 }
