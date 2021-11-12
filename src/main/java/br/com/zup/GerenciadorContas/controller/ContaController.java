@@ -1,5 +1,6 @@
 package br.com.zup.GerenciadorContas.controller;
 
+import br.com.zup.GerenciadorContas.dto.AtualizarStatusContaDTO;
 import br.com.zup.GerenciadorContas.dto.EntradaContaDTO;
 import br.com.zup.GerenciadorContas.dto.ExibirEntradaContaDto;
 import br.com.zup.GerenciadorContas.dto.SaidaContaDTO;
@@ -40,4 +41,10 @@ public class ContaController {
         return listaConta;
 
     }
+
+    @PutMapping("{id}")
+    public SaidaContaDTO atualizarConta (int id, @RequestBody AtualizarStatusContaDTO atualizarStatusContaDTO){
+        return modelMapper.map(contaService.atualizarConta(id), SaidaContaDTO.class);
+    }
+
 }
