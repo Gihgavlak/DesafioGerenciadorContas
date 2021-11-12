@@ -5,6 +5,7 @@ import br.com.zup.GerenciadorContas.enun.Tipo;
 import java.time.LocalDate;
 
 public class EntradaContaDTO {
+    private int id;
     private String nome;
     private double valor;
     private Tipo tipo;
@@ -46,4 +47,11 @@ public class EntradaContaDTO {
         this.dataDeVencimento = dataDeVencimento;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
