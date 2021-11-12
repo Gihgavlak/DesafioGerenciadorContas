@@ -44,6 +44,14 @@ public class ContaController {
 
     }
 
+    @GetMapping("/{id}")
+    public SaidaContaDTO buscarPorId(@PathVariable int id) {
+        GerenciamentoContas gerenciamentoContas = contaService.indentificador(id);
+        return modelMapper.map(gerenciamentoContas, SaidaContaDTO.class);
+
+    }
+
+
     @PutMapping("/id}")
     public SaidaContaDTO atualizarConta (@PathVariable int id, @RequestBody AtualizarStatusContaDTO atualizarStatusContaDTO) {
         if (atualizarStatusContaDTO.getStatus() == Status.PAGO) {
