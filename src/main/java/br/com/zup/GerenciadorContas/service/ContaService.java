@@ -49,4 +49,15 @@ public class ContaService {
         return gerenciamentoContas;
 
     }
+
+    public void deletarConta(int id) {
+        if (gerenciamentoContaRepository.existsById(id)) {
+            gerenciamentoContaRepository.deleteById(id);
+        } else {
+            throw new IdNaoEnctrdoException("Cadastro não encontrado!");
+        }
+
+
+    }
+
 }
