@@ -31,7 +31,7 @@ public class ContaService {
         return gerenciamentoContas;
     }
 
-    public GerenciamentoContas atualizarConta (int id){
+    public GerenciamentoContas indentificador (int id){
         Optional<GerenciamentoContas> gerenciamentoContas = gerenciamentoContaRepository.findById(id);
         if (gerenciamentoContas.isEmpty()){
             throw new IdNaoEnctrdoException("Inválido, não foi encontrado");
