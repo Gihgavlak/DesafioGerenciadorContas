@@ -4,8 +4,8 @@ public class MensagemExcecao {
 
     private String mensagem;
 
-    public MensagemExcecao(String memdaggem) {
-
+    public MensagemExcecao(String mensagem) {
+        this.mensagem = mensagem;
     }
 
     public String getMensagem() {

@@ -32,19 +32,19 @@ public class ControllerAdvice {
     @ExceptionHandler(StatusInvalidoException.class)
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
     public MensagemExcecao statusInvalidoException(StatusInvalidoException excecao) {
-        return new MensagemExcecao(excecao.getLocalizedMessage());
+        return new MensagemExcecao(excecao.getMessage());
     }
 
     @ExceptionHandler(IdNaoEnctrdoException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public MensagemExcecao idNaoEncontradoException(IdNaoEnctrdoException excecao) {
-        return new MensagemExcecao(excecao.getLocalizedMessage());
+        return new MensagemExcecao(excecao.getMessage());
     }
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public MensagemExcecao enumInvalidoException(HttpMessageNotReadableException excecao) {
-        return new MensagemExcecao(excecao.getLocalizedMessage());
+        return new MensagemExcecao("Informção inválida");
     }
 
 
