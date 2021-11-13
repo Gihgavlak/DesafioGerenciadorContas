@@ -56,7 +56,7 @@ public class ContaController {
     }
 
 
-    @PutMapping("/id}")
+    @PutMapping("/{id}")
     public SaidaContaDTO atualizarConta (@PathVariable int id, @RequestBody AtualizarStatusContaDTO atualizarStatusContaDTO) {
         if (atualizarStatusContaDTO.getStatus() == Status.PAGO) {
             return modelMapper.map(contaService.atualizarConta(id), SaidaContaDTO.class);

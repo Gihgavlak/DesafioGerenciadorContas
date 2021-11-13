@@ -25,7 +25,7 @@ public class ContaService {
         }else{
             gerenciamentoContas.setStatus(Status.AGUARDANDO);
         }
-        gerenciamentoContas.setDataDePagamento(null);
+        //gerenciamentoContas.setDataDePagamento(null);
         return gerenciamentoContaRepository.save(gerenciamentoContas);
     }
 
